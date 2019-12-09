@@ -1,0 +1,32 @@
+.sites-button {
+  background: $primary-color;
+  font-size: 1.25rem;
+  font-weight: bold;
+  box-shadow: 0 -2px 0 rgba(0,0,0,0.2) inset;
+  border-radius: 3px;
+  border: none;
+}
+
+.button {
+  //border-radius: 1px;
+  transition: all .3s ease;
+}
+
+a.button {
+
+    }
+
+.button.expanded {
+  font-weight: bold;
+  transition: all .3s ease;
+
+}
+
+
+/* Custon Nar Trans Style */
+  // Ancho personalizado botón expandido cuando la celdas del grid tienen un grid-margin-x
+  @include breakpoint(large) {
+    .button.expanded {
+    }
+}
+

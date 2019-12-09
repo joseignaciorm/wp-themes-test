@@ -1,0 +1,201 @@
+
+/* *** Estilos para el Footer container *** */
+$p-l: 0.625rem;
+$p-r: 0.625rem;
+$f-weight: 300;
+$m-r-header: 5rem;
+
+/* *** Footer section *** */
+h1, h2, h3, h4 {
+  color: $color-main;
+  //font-family: monserrat;
+  }
+
+.footer-grid {
+  @include xy-grid;
+
+  section {
+    @include xy-cell();
+    @include breakpoint(large) {
+    @include xy-cell(auto);
+    }
+  }
+
+  ul {
+    list-style-type: none;
+    margin: 0;
+    padding: 0;
+  }
+
+}
+
+
+.footer-container {
+  border-top: 3px solid $color-main;
+
+    /* *** Menu container del Footer *** */
+  .main__footer__section {
+        margin-top: 3rem;
+        margin-bottom: 3rem;
+
+        display: grid;
+        column-gap: 1em;
+
+        @include breakpoint(large) {
+          grid-template-columns: repeat(12, 1fr);
+        }
+
+
+        // Estilos footer left
+        .footer__left {
+            margin-bottom: 4rem;
+
+            h4 {
+              font-weight: 600;
+              font-size: rem-calc(14);
+            }
+
+            .menu {
+              flex-direction: column;
+            }
+
+            @include breakpoint(large) {
+              grid-column: 1 / span 4;
+            }
+
+            @include breakpoint(xxlarge) {
+              grid-column: 1 / span 3;
+            }
+
+            &--nav-menu {
+              margin-top: .7rem;
+              font-size: .965em;
+              display: grid;
+              grid-template-columns: repeat(2, minmax(150px, 200px));
+
+
+              .menu a {
+              padding: 0;
+              font-weight: $f-weight;
+              margin-bottom: .9em;
+              }
+              .menu .is-active > a {
+                background-color: #ffffff;
+                //color: $color-border-enfasis;
+                color: $color-main;
+                //font-weight: bold;
+              }
+
+            }
+
+        } // Fín footer left
+
+
+        // Estilos footer right
+        .footer__right {
+            display: grid;
+            grid-gap: 1rem;
+
+            grid-template-rows: repeat(2, auto-fill);
+
+            @include breakpoint(large) {
+              grid-row: 1;
+              grid-column: 5 / span 8;
+              justify-content: center;
+            }
+
+            @include breakpoint(xxlarge) {
+              grid-row: 1;
+              grid-column: 5 / span 8;
+              justify-content: center;
+            }
+
+            // Contenedor de los logos del footer right
+            &--item-1 {
+              margin-top: 2em;
+              margin-bottom: 2em;
+              display: grid;
+              grid-template-columns: repeat(1, minmax(80%, 400px));
+              grid-template-rows: 1fr;
+              grid-gap: 2rem;
+              align-items: center;
+
+              @include breakpoint(medium) {
+                  grid-template-columns: repeat(3, 1fr);
+                  grid-gap: 1rem;
+              }
+
+              @include breakpoint(large) {
+                margin-top: 0;
+                margin-bottom: 0;
+              }
+
+              .footer__right--image {
+                width: 100%;
+
+                @include breakpoint(large) {
+                  width: 85%;
+                }
+              }
+            }
+
+            // Contenedor description del footer right
+            &--item-2 {
+              grid-row: 1;
+
+              @include breakpoint(medium) {
+                grid-row: 2;
+              }
+            }
+
+            &--email {
+              margin-bottom: .265rem;
+            }
+
+            .footer__right--description, p {
+              color: $color-main;
+              font-weight: initial;
+
+              .footer__right--txt {
+                margin-bottom: 0;
+              }
+            }
+        } // Fín footer right
+
+  } // Fín main__footer__section
+
+  /* *** After Footer Main Container *** */
+  .main__footer__after {
+    min-height: 182px;
+    background-color: $color-main;
+    color: #fff;
+
+        .social__media__nav--menu {
+          width: 300px;
+          margin-left: auto;
+          margin-right: auto;
+          @include breakpoint(large) {
+            margin-left: 0;
+            margin-right: 0;
+          }
+        }
+
+        .menu {
+          display: grid;
+          grid-template-columns: repeat(3, 1fr);
+          justify-items: center;
+          grid-gap: 1rem;
+
+        }
+
+        .menu a {
+          display: inline-block;
+          margin-top: 2rem;
+          padding: 0;
+          color: #fff;
+        }
+  }
+
+}
+
+

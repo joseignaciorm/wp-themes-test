@@ -1,0 +1,267 @@
+/* *** Estilos personalizados para el tema Nar Trans *** */
+
+/* *** Base Styles *** */
+
+/* Base Theme */
+p {
+    font-size: rem-calc(16);
+    margin: 0;
+    line-height: 1.61;
+}
+
+small, .date, a {
+    line-height: 1.4;
+    color: $color-main;
+}
+
+a:hover {
+  opacity: .9;
+}
+
+$p-t: 2rem;
+$p-b: 2rem;
+$m-t: 2.5rem;
+$m-b: 2.5rem;
+.section-p-t-b {
+    padding-top: $p-t;
+    padding-bottom: $p-b;
+    @include breakpoint(large) {
+      $p-t: 4rem;
+      $p-b: 4rem;
+      padding-top: $p-t;
+      padding-bottom: $p-b;
+  }
+}
+
+.div-m-t-b {
+  margin-top: $m-t;
+  margin-bottom: $m-b;
+}
+
+.m-t {
+  margin-top: $m-t;
+}
+
+.m-b {
+    margin-bottom: .5rem;
+}
+
+/* Fin base */
+
+/* Custom WordPress Styles */
+
+
+/* *** Foundation Styles *** */
+.main-grid {
+  margin-top: 0rem;
+
+  @include breakpoint(medium) {
+    margin-top: 0rem;
+  }
+}
+
+.grid-container {
+  padding-right: 0.9375rem;
+  padding-left: 0.9375rem;
+  //max-width: 100rem;
+  margin: 0 auto; }
+  @media print, screen and (min-width: 40em) {
+    .grid-container {
+    }
+}
+
+
+  @media print, screen and (min-width: 40em) {
+    h1, .h1 {
+      font-size: 1.5rem;
+      font-weight: 600;}
+    h2, .h2 {
+      font-size: 1.2rem;
+      font-weight: 600;}
+    h3, .h3 {
+      font-size: 1.9375rem; }
+    h4, .h4 {
+      font-size: 1.5625rem; }
+    h5, .h5 {
+      font-size: 1.25rem; }
+    h6, .h6 {
+      font-size: .946rem; }
+  }
+
+  li {
+    list-style: none;
+  }
+  /* *** Fin Tamaños de los headers */
+
+.U-breadcrumbs {
+  text-transform: uppercase;
+  display: inline-table;
+  font-size: rem-calc(13);
+  font-weight: 600;
+  letter-spacing: .8px;
+  padding: .2em 1em;
+  margin-right: 1rem;
+  margin-bottom: 2rem;
+  background-color: $color-bg-txt-alt;
+}
+
+/* *** Custom Template Styles *** */
+// Estilos similares a los de una card
+.data-description {
+  &--section {
+    padding: 1.275rem 0.8125rem;
+  }
+
+  .data--title {
+    display: inline-table;
+    font-size: rem-calc(14);
+    font-weight: 600;
+  }
+
+  .data--value {
+    display: inline-table;
+    font-size: rem-calc(14);
+    letter-spacing: 1.57;
+  }
+
+  .data-value-list {
+    list-style: none;
+    padding: 0;
+    margin: 0;
+  }
+
+}
+
+/* *** Cards *** */
+.card {
+    border: 3px solid $color-main;
+    background-color: transparent;
+    overflow: visible;
+    color: $color-main;
+    position: relative;
+
+    img {
+      border-bottom: 3px solid $color-main;
+      min-width: 100%;
+      height: auto;
+      object-fit: cover;
+    }
+
+    @include breakpoint(large) {
+    }
+
+    .card-section {
+      padding: 1.275rem 0.8125rem;
+
+      @include breakpoint(large) {
+          padding: 1.8125rem 1.625rem;
+      }
+
+      .title-up {
+        text-transform: uppercase;
+        display: inline-table;
+        font-size: rem-calc(12);
+        font-weight: 600;
+        letter-spacing: .8px;
+        padding: .2em 1em;
+        position: absolute;
+        top: -0.9rem;
+        left: 10px;
+      }
+    }
+} // Fín custom card
+
+
+    /* *** End Foundation Styles *** */
+
+  /* *** Nar Trans Styles Utilities *** */
+$font-enfasis: rem-calc(20);
+.H-enfasis {
+  font-size: $font-enfasis;
+  font-weight: 600;
+  line-height: 1.4;
+
+    @include breakpoint(large) {
+      $font-enfasis: rem-calc(60);
+      font-size: $font-enfasis;
+      line-height: 1;
+      margin-bottom: 1.876rem;
+  }
+}
+
+.H-enfasis-small {
+  font-size: $font-enfasis;
+  font-weight: 600;
+  line-height: 1.4;
+
+    @include breakpoint(large) {
+      $font-enfasis: rem-calc(40);
+      font-size: $font-enfasis;
+      line-height: 1;
+      margin-bottom: 1.876rem;
+  }
+}
+
+.italic-font {
+  font-style: italic;
+}
+
+.Txt {
+  font-weight: 600;
+  font-size: rem-calc(16);;
+}
+
+.M-b {
+  margin-bottom: 1em;
+}
+
+.M-t {
+  margin-top: 2em;
+}
+
+.M-t-b {
+  margin-top: 1em;
+  margin-bottom: 1em;
+}
+
+.M-l-r {
+  margin-left: .5em;
+  margin-right: .5em;
+}
+
+.P-t {
+  padding-top: rem-calc(90);
+}
+
+.P-b {
+  padding-bottom: 2.5rem;
+  @include breakpoint(large) {padding-bottom: rem-calc(80);}
+
+}
+
+
+.public-date {
+  font-size: .8em;
+}
+
+
+.P-l-r {
+  $p-l: 1rem;
+  $p-r: 1rem;
+  padding-left: $p-l;
+  padding-right: $p-r;
+
+}
+
+.P-container {
+  $p-l: 0.9375rem;
+  $p-r: 0.9375rem;
+  padding-left: $p-l;
+  padding-right: $p-r;
+
+  @include breakpoint(medium) {}
+
+}
+
+/* *** Estilos para el Page Template - home-page *** */
+

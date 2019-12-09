@@ -1,0 +1,286 @@
+.main-container {
+  @include xy-grid-container;
+
+  @include breakpoint(xxlarge) {
+
+        }
+
+  // Full width template
+  .main-content-full-width {
+    @include xy-cell(12);
+  }
+
+  // Default template
+  .main-content {
+    @include breakpoint(small) {
+      @include xy-cell(12);
+    }
+
+    @include breakpoint(medium) {
+      @include xy-cell(8);
+    }
+  }
+
+  .sidebar {
+    @include breakpoint(small) {
+      @include xy-cell(12);
+    }
+
+    @include breakpoint(medium) {
+      @include xy-cell(4);
+      margin-top: 1rem;
+    }
+
+  }
+}
+
+/* *** Estilos para el Home Page Template *** */
+
+// Primera section del home container
+.blk-full-with {
+  background-color: $color-background-alternate;
+}
+.blk-1 {
+    @include breakpoint(large) {
+      $p-t: 8rem;
+      $p-b: 8rem;
+      padding-top: $p-t;
+      padding-bottom: $p-b;
+  }
+
+
+    .btn-nar a.button {
+      color: $color-header-bg;
+      font-weight: bold;
+      color: $color-header-bg;
+      transition: all .3s ease;
+      border: 2px solid $color-main;
+
+      &:hover {
+        background: $color-background-alternate;
+        color: $color-main;
+        border: 2px solid $color-main;
+      }
+    }
+
+    .btn-lab .button.hollow {
+      border: 2px solid $color-main;
+      color: $color-main;
+      font-weight: bold;
+      transition: all .3s ease;
+
+      &:hover {
+        background: $color-main;
+        color: $color-header-bg;
+        border: 2px solid $color-main;
+      }
+    }
+
+
+
+} // Fín Primera section del home container
+
+// Segunda section del home container EVENT
+.event-content {
+    color: $color-main;
+    padding-bottom: 2rem;
+
+    .l-event-card-content {
+      /*
+        *** Margin top al contenedor izquierdo para alinearlo  con el aside que tyiene margin top para poder mostrar el titilu. Pendiente mejorarlo ***
+      */
+      //margin-top: 1em;
+      .card {
+
+        .card-section {
+          position: relative;
+
+          .title-up {
+            background-color: $color-bg-txt-alt;
+          }
+        } // Fín Card Section
+      } // Fín Card
+    }
+
+    .aside--cards {
+      .card {
+
+        .card-section {
+
+          position: relative;
+
+          .title-up {
+            background-color: #ffffff;
+          }
+        }
+      } // Fín card
+
+        .card-event-btn {
+            margin-top: 2rem;
+
+          .button.expanded {
+            color: $color-header-bg;
+
+            &:hover {
+              background-color: $color-hover-button;
+              color: $color-main;
+            }
+          }
+        }
+    } // Fín Aside
+  } // Fín Segunda section del home container EVENT
+
+// Tercera section del home container NOTICIAS
+.news-full-with {
+  background-color: $color-section-bg-first;
+  margin-top: 2em;
+
+  .news-content {
+    .news--title {
+      padding-top: 1em;
+      margin-bottom: .5em;
+      font-size: 2.3rem;
+    }
+
+  &--cards {
+
+    .card {
+      .image {
+        height: 200px;
+      }
+
+      .card-section {
+        position: relative;
+        .title-up {
+          background-color: $color-bg-txt-alt;
+        }
+      }
+    }
+  }
+    .button.expanded {
+      background-color: #FFFFFF;
+      color: $color-main;
+      font-weight: bold;
+      border: 0px;
+      width: calc( 100% - .9rem );
+      margin-left: .4rem;
+
+      &:hover {
+          background: $color-main;
+          color: $color-header-bg;
+          border: 0px solid #FFFFFF;
+        }
+    }
+  }// Fín Tercera section del home container
+} // Fín Tercera section del home container NOTICIAS
+
+// Cuarta section del home container INVESTIGACIÓN
+.research-sec {
+
+  &--title {
+    font-size: 2.5em;
+    font-weight: bold;
+    padding-top: 1rem;
+    padding-bottom: 1rem;
+  }
+
+  .card {
+    border: 3px solid $color-border-alt;
+
+    .card:first-child {
+      border: 3px solid $color-border-enfasis;
+      background-color: $color-border-enfasis;
+
+      .title-up {
+        background-color: $color-border-enfasis;
+      }
+    }
+      .title-up {
+        background-color: #ffffff;
+      }
+  }
+
+  .button.expanded {
+    color: #182a46;
+    opacity: .85;
+    background-color: $color-section-bg-first;
+  }
+    @include breakpoint(large) {
+      .button.expanded {
+          width: calc( 100% - 1.525rem );
+          margin-left: 1.4rem;
+          border: 0;
+
+          &:hover {
+              background: $color-hover-button;
+              color: $color-main;
+              border: 0px solid $color-hover-button;
+          }
+      }
+    }
+
+
+} // FÍN Cuarta section del home container INVESTIGACIÓN
+
+// Quinta section del home container CATÁLOGO
+
+.archive.post-type-archive-resource .resource-full-with {
+  background-color: #ffffff;
+}
+
+.resource-full-with {
+    background-color: $color-header-bg;
+    margin-top: 2em;
+  .resource-content {
+    &--title {
+      padding-top: 1em;
+      margin-bottom: .5em;
+      font-size: 2.3rem;
+    }
+
+  &--cards {
+
+    .card {
+
+      .card-section {
+        position: relative;
+
+        p {
+          font-size: rem-calc(16);
+          font-weight: 600;
+        }
+
+        .title-up {
+          background-color: $color-bg-txt-alt;
+          font-size: rem-calc(13);
+          font-weight: 600;
+        }
+
+        .title {
+          font-weight: 600;
+          font-size: rem-calc(20);
+        }
+      }
+    }
+  }
+    .button.expanded {
+      background-color: $color-main;
+      color: $color-header-bg;;
+      font-weight: bold;
+      border: 0;
+      width: calc( 100% - .9rem );
+      margin-left: .465rem;
+
+      &:hover {
+          background: $color-hover-button;
+          color: $color-main;
+        }
+
+    }
+  }// Fín Tercera section del home container
+} // Fín Quinta section del home container CATÁLOGO
+
+
+
+
+/* *** Fín Estilos para el Home Page Template *** */
