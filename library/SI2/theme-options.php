@@ -6,9 +6,12 @@
 if (!function_exists('si2_nartrans_theme_support_scripts')) :
 	function si2_nartrans_theme_support_scripts()
 	{
-		wp_register_style('google-fonts', 'https://fonts.googleapis.com/css?family=Montserrat:300i,400,400i,500i,600,600i,700,700i,800&display=swap" rel="stylesheet', array(), '1.0.0', 'all');
+    wp_register_style('google-fonts', 'https://fonts.googleapis.com/css?family=Montserrat:300i,400,400i,500i,600,600i,700,700i,800&display=swap" rel="stylesheet', array(), '1.0.0', 'all');
+    
+    wp_register_style('font-awesome', '//maxcdn.bootstrapcdn.com/font-awesome/4.7.0/css/font-awesome.min.css', array(), '1.0.0', 'all');
 
-		wp_enqueue_style('google-fonts');
+    wp_enqueue_style('google-fonts');
+    wp_enqueue_style('font-awesome');
 	}
 endif;
 add_action('wp_enqueue_scripts', 'si2_nartrans_theme_support_scripts');

@@ -8,8 +8,8 @@
 		<div class="event-content">
 			<div class="l-event-card-content grid-x grid-padding-x section-p-t-b">
 				<?php
-				$event = NarTrans_Event()->get_query(['posts_per_page' => 4]);
-				while ($event->have_posts()) : $event->the_post();
+				//$event = NarTrans_Event()->get_query(['posts_per_page' => 4]);
+				while (have_posts()) : the_post();
 					?>
 
 					<div class="cell small-12 medium-6 large-4 grid-x">
@@ -17,7 +17,7 @@
 					</div>
 
 				<?php endwhile; ?>
-
+				<?php echo paginate_links(); ?>
 			</div>
 		</div>
 

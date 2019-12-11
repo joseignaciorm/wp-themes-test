@@ -22,7 +22,7 @@ get_header(); ?>
 				<div class="btn-nar cell small-12 medium-6">
 
 
-					<a class="button expanded" href="<?php echo get_the_permalink(); ?>">
+					<a class="button expanded" href="<?php echo site_url('/objetivos'); ?>">
 						<?php _e('El Proyecto Nar_Trans', 'nar-trans'); ?>
 					</a>
 				</div>

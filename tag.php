@@ -1,5 +1,4 @@
 <?php get_header(); ?>
-
 <section class="grid-container section-p-t-b">
 	<div class="grid-x grid-padding-x">
 
