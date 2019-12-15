@@ -1,0 +1,308 @@
+/*
+* {
+	padding: 0;
+	margin: 0;
+	box-sizing: border-box;
+}
+
+body {
+	background: #ddeefc;
+	font-family: 'Lato', sans-serif;
+}
+*/
+
+/* Formulario catálogos */
+.form.resource {
+	position: relative;
+	min-height: 300px;
+
+	.visibleItems {
+		display: grid;
+		grid-template-columns: 1.5fr 1fr 1.5fr;
+		grid-template-rows: 1fr;
+		grid-template-areas: "searcher btnSubmit filterSearch";
+		column-gap: 2rem;
+		align-items: center;
+		margin: 2rem 0 0 0;
+
+		.visibleItem.searcher {
+			grid-area: searcher;
+			/*width: 200px;*/
+		}
+		.visibleItem.filter {
+			grid-area: filterSearch;
+		}
+
+		.visibleItem.btnSubmit {
+			grid-area: btnSubmit;
+		}
+	}
+
+	input {
+		margin-bottom: 0;
+	}
+
+	input,
+	.btnSubmit button,
+	.visibleItem.filter {
+		border: 2px solid #CED6E0;
+		border-radius: 5px;
+		height: 3rem;
+		padding: .5em 1em;
+		font-size: 1em;
+		transition: .3s ease all;
+	}
+
+	input:hover,
+	.visibleItem.filter:hover {
+		border: 2px solid #93BDED;
+	}
+
+	input:focus {
+		outline: rgb(4,4,4);
+		box-shadow: 1px 7px 10px -5px rgba(90, 116, 148, 0.3);
+	}
+
+	.visibleItem.filter {
+		display: flex;
+		align-items: center;
+		color: #333;
+		font-size: 1rem;
+		cursor: pointer;
+
+		.btn-advanceSearch {
+			width: 100%;
+			display: flex;
+			align-items: center;
+
+			span {
+				/*position: relative;*/
+				bottom: 0;
+				margin-left: 20px;
+			}
+		}
+	}
+
+	
+	.btnSubmit {
+		width: 50%;
+		display: flex;
+		justify-content: flex-start;
+		align-items: center;
+		border-radius: 5px;
+		background-color: #2364D2;
+		box-shadow: 2px 2px 10px 0px rgba(0, 85, 212, 0.4);
+	}
+
+	.btnSubmit button {
+		width: 100%;
+		display: flex;
+		align-items: center;
+		border: none;
+		padding: 1em;
+		font-size: 1.3em;
+		color: #fff;
+		background-color: #2364D2;
+		box-shadow: 2px 2px 10px 0px rgba(0, 85, 212, 0.4);
+		cursor: pointer;
+
+		&:hover {
+			background-color: #1850b1;
+		}
+
+		.search-icon {
+			margin-right: 10px;
+			position: relative;
+		}
+		
+	}
+
+
+	/* ******************
+		***	Grid de busqueda avanzada ***
+	**********************/
+
+
+	.hiddenItems {
+		display: none;
+		position: absolute;
+		top: 50px;
+		left: 0px;
+		width: 1200px;
+		border: 2px solid red;
+		padding: 0 2rem;
+
+		/*display: flex;
+		flex-wrap: wrap;
+		justify-content: space-between;*/
+
+		&.active {
+			display: block;
+		}
+
+		.fields {
+			display: flex;
+			flex-direction: row;
+
+			select {
+				-webkit-appearance: none;
+				border: 2px solid #CED6E0;
+				border-radius: 5px;
+				padding: .5em 1em;
+				height: 2.5rem;
+				
+				width: 100%;
+				transition: .3s ease all;
+			}
+
+			.selectItem {
+				width: 100%;
+				margin-right: 15px;
+				margin-bottom: 1em;
+				position: relative;
+			}
+			.selectItem span {
+				position: absolute;
+				color: #CED6E0;
+				top: 14px;
+				right: 15px;
+				transition: .3s ease all;
+			}
+		}
+
+		.callActions {
+			display: flex;
+			justify-content: space-around;
+			align-items: flex-start;
+			column-gap: 1em;
+			row-gap: 1em;
+
+			.btn-1,
+			.btn-2 {
+				font-size: 1.3rem;
+				color: #fff;
+				background-color: #2364D2;
+				box-shadow: 2px 2px 10px 0px rgba(0, 85, 212, 0.4);
+				cursor: pointer;
+			}
+
+			.btn-1 a,
+			.btn-2 a{
+				display: inline-block;
+				text-decoration: none;
+				color: #fff;
+				padding: .5em 1em;
+				border-radius: 15px;
+			}
+		}
+	}
+
+
+
+}
+
+
+/* formulario tarjeta */
+.form-content {
+	width: 100%;
+	max-width: 1200px;
+	min-height: 100vh;
+	margin: auto;
+	display: flex;
+	justify-content: center;
+	align-items: center;
+}
+
+.formulario-tarjeta {
+	background: #fff;
+	padding: 30px;
+	width: 100%;
+	max-width: 700px;
+	border-radius: 10px;
+	position: relative;
+}
+
+.formulario-tarjeta label {
+	display: block;
+	color: #7D8994;
+	margin-bottom: 5px;
+	font-size: 16px;
+}
+
+.formulario-tarjeta input,
+.formulario-tarjeta select,
+.btn-enviar {
+	border: 2px solid #CED6E0;
+	font-size: 18px;
+	height: 50px;
+	width: 100%;
+	padding: 5px 12px;
+	transition: .3s ease all;
+	border-radius: 5px;
+}
+
+.formulario-tarjeta input:hover,
+.formulario-tarjeta select:hover {
+	border: 2px solid #93BDED;
+}
+
+.formulario-tarjeta input:focus,
+.formulario-tarjeta select:focus {
+	outline: rgb(4,4,4);
+	box-shadow: 1px 7px 10px -5px rgba(90, 116, 148, 0.3);
+}
+
+.formulario-tarjeta input {
+	margin-bottom: 20px;
+	text-transform: uppercase;
+}
+
+.formulario-tarjeta .flexbox {
+	display: flex;
+	justify-content: space-between;
+}
+
+.formulario-tarjeta .expira {
+	width: 100%;
+}
+
+.formulario-tarjeta .ccv {
+	min-width: 100px;
+}
+
+.formulario-tarjeta .grupo-select {
+	width: 100%;
+	margin-right: 15px;
+	position: relative;
+}
+
+.formulario-tarjeta select {
+	-webkit-appearance: none;
+}
+
+.formulario-tarjeta .grupo-select i {
+	position: absolute;
+	color: #CED6E0;
+	top: 18px;
+	right: 15px;
+	transition: .3s ease all;
+}
+
+.formulario-tarjeta .grupo-select:hover i {
+	color: #93bfed;
+}
+
+.formulario-tarjeta .btn-enviar {
+	border: none;
+	padding: 10px;
+	font-size: 22px;
+	color: #fff;
+	background-color: #2364D2;
+	box-shadow: 2px 2px 10px 0px rgba(0, 85, 212, 0.4);
+	cursor: pointer;
+}
+
+.formulario-tarjeta .btn-enviar:hover {
+	background-color: #1850b1;
+}
+

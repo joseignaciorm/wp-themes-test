@@ -19,38 +19,65 @@
 		
 		<!-- https://desarrollowp.com/blog/tutoriales/crea-propio-motor-busqueda-wordpress/ -->
 		
-		<div class="grid-container section-p-t-b">
-			<form role="search" method="get" class="search-formj grid-x grid-padding-x" action="<?php echo home_url(  ); ?>">
-				<div class="cell small-12 large-3">
-					<label class="">
-						<span class="screen-reader-text"><?php echo _x( 'Search for:', 'label' ) ?></span>
-						<input type="search" class="search-field" placeholder="<?php echo esc_attr_x( 'Search …', 'placeholder' ) ?>" value="<?php echo get_search_query() ?>" name="s" title="<?php echo esc_attr_x( 'Search for:', 'label' ) ?>" />
-					</label>
-				</div>
+		<div class="grid-container form-contain section-p-t-b">
+			<form method="get" class="form resource" action="">
+				<div class="visibleItems">
+					<div class="visibleItem searcher">
+						<label for="inputKeyword"></label>
+						<input type="text" id="inputKeyword" maxlength="10" autocomplete="off" placeholder="Buscar">
+					</div>
 
-				<div class="cell small-12 large-3">
-					<select class="" id="category_name" name="category_name">
-						<option value="">Todas</option>
-						<?php $categories = get_categories();
-						foreach ($categories as $key => $category) {?>
-						<option value="<?php echo $category->slug;?>"><?php echo $category->name;?></option>
-						<?php }?>
-					</select>
-				</div>
+					<div class="visibleItem filter">
+						<div class="btn-advanceSearch" id="btn-advanceSearch">
+							<p>Busqueda avanzada</p>
+							<span class="fas fa-angle-down"></span>
+						</div>
 
-				<!--<div class="cell small-12 large-3">
-					<select class="" id="tag" name="tag">
-						<option value="">Todas</option>
-						<?php //$tags = get_tags();
-						//foreach ($tags as $key => $tag) {?>
-						<option value="<?php// echo $tag->slug;?>"><?php //echo $tag->name;?></option>
-						<?php //}?>
-					</select>
-				</div>-->
+						<div class="hiddenItems" id="hiddenItems">
+							<div class="fields" id="fields">
+								<div class="selectItem">
+									<select name="categoryName" id="todasCategorias">
+										<option disabled selected>Todas las categorías</option>
+										<option value="cat-1">Cat-1</option>
+										<option value="cat-2">Cat-2</option>
+									</select>
+									<span class="fas fa-angle-down"></span>
+								</div>
 
-				<div class="cell small-12 large-3">
-					<input type="submit" class="search-submit button" value="<?php echo esc_attr_x( 'Search', 'submit button' ) ?>" />
-					<!--<input type="hidden" name="post_type" value="resource" />-->
+								<div class="selectItem">
+									<select name="languageName" id="todosIdiomas">
+										<option disabled selected>Todos los idiomas</option>
+										<option value="en">Inglés</option>
+										<option value="es">Español</option>
+									</select>
+									<span class="fas fa-angle-down"></span>
+								</div>
+
+								<div class="selectItem">
+									<select name="yearName" id="todasAños">
+										<option disabled selected>Todos los años</option>
+										<option value="year-1">2017</option>
+										<option value="year-2">2019</option>
+									</select>
+									<span class="fas fa-angle-down"></span>
+								</div>
+							</div>
+
+							<div class="callActions">
+								<div class="btn-1">
+									<a href="">Todos</a>
+								</div>
+
+								<div class="btn-2">
+									<a href="">Premios NarTrans</a>
+								</div>
+							</div>
+						</div>
+					</div>
+
+					<div class="visibleItem btnSubmit">
+						<button type="submit"><span class="fas fa-search search-icon"></span>Buscar</button>
+					</div>
 				</div>
 				
 			</form>
