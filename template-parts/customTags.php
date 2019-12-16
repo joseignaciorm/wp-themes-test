@@ -1,10 +1,10 @@
 <article class="tax__container">
-
 	<div class="tax__container--section">
-
+	<?php if(has_post_thumbnail()) : ?>
 		<figure class="image">
-			<?php echo get_the_post_thumbnail(); ?>
+			<?php //echo get_the_post_thumbnail(); ?>
 		</figure>
+	<?php endif; ?>
 
 		<div class="tax__container--content">
 			<?php

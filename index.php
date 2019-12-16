@@ -14,7 +14,6 @@
  */
 
 get_header(); ?>
-
 <div class="main-container">
 	<div class="main-grid">
 		<main class="main-content">

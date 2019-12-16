@@ -11,7 +11,6 @@
  */
 
 get_header(); ?>
-
 <?php get_template_part( 'template-parts/featured-image' ); ?>
 <div class="grid-container section-p-t-b">
 	<div class="">
